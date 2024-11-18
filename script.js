@@ -37,7 +37,8 @@ function generateGrid()
 
     const hoverSquares = document.querySelectorAll(".grid-cell");
     hoverSquares.forEach((hoverSquare) => {
-        let currentOpacity = 0.5;
+    
+        let currentOpacity = 0.2;
         hoverSquare.style.opacity = currentOpacity;
         console.log(currentOpacity);
         hoverSquare.addEventListener("mouseenter", (event) => {
