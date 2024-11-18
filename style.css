@@ -1,0 +1,22 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 15px;
+}
+
+#grid-container {
+    display: flex;
+    flex-wrap: wrap;
+    width: 500px; /* Constant size */
+    height: 500px; /* Constant size */
+    border: 1px solid #000;
+
+}
+
+.grid-cell {
+    border: 1px solid #000000; /* Optional: for cell borders */
+    box-sizing: border-box;
+}
+
