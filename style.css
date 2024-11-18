@@ -16,7 +16,7 @@ body {
 }
 
 .grid-cell {
-    border: 1px solid #000000; /* Optional: for cell borders */
+    /*border: 1px solid #000000; /* Optional: for cell borders */
     box-sizing: border-box;
 }
 

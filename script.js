@@ -37,22 +37,37 @@ function generateGrid()
 
     const hoverSquares = document.querySelectorAll(".grid-cell");
     hoverSquares.forEach((hoverSquare) => {
-        hoverSquare.addEventListener("mouseenter", () => {
-            hoverSquare.style.backgroundColor = getRandomColorWithOpacity();
+        let currentOpacity = 0.5;
+        hoverSquare.style.opacity = currentOpacity;
+        console.log(currentOpacity);
+        hoverSquare.addEventListener("mouseenter", (event) => {
+
+            if(hoverSquare.style.backgroundColor === ''){
+                hoverSquare.style.backgroundColor = getRandomColorWithOpacity();
+            }
+            //hoverSquare.style.opacity = '0.5';
+
+            let currentOpacity = parseFloat(event.target.style.opacity);
+
+            console.log(currentOpacity)
+            if (currentOpacity < 1) {
+                currentOpacity = Math.min(1, currentOpacity + 0.2);
+                event.target.style.opacity = currentOpacity;
+            }
         });
     });
     
 }
 
-function getRandomColorWithOpacity(opacity = 1) {
+function getRandomColorWithOpacity(/*xopacity = 1*/) {
     const r = Math.floor(Math.random() * 256);
     const g = Math.floor(Math.random() * 256);
     const b = Math.floor(Math.random() * 256);
 
     // Ensure the opacity is between 0 and 1
-    opacity = Math.max(0, Math.min(opacity, 1));
+    //xopacity = Math.max(0, Math.min(xopacity, 1));
 
-    return `rgba(${r}, ${g}, ${b}, ${opacity})`;
+    return `rgba(${r}, ${g}, ${b})`;
 }
 
 
